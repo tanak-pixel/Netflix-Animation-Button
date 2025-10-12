@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background: #252432;
+    overflow: hidden;
+
+}
+.btn{
+    position: relative;
+    width:240px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 2em;
+    padding: 0; /* remove browser default button padding that can shift content */
+    border: none; /* remove default border */
+    appearance: none;
+    -webkit-appearance: none;
+    transition: 0.5s;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #e50914;
+}
+
+.btn:hover{
+    filter:drop-shadow(0 0 10px #e50914) drop-shadow(0 0 30px #e50914);
+    letter-spacing: 0.2em;
+    color: #fff;
+}
+.btn .bar{
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background : #e50914;
+    pointer-events: none;
+    transition: transform 0.2s ease-in-out;
+    z-index: 0; /* behind the text but above background */
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+.btn:hover .bar{
+    transform: scaleY(1);
+    transform-origin: top;
+}
+.btn .bar:nth-child(even){
+    transform-origin: top;
+}
+.btn:hover .bar:nth-child(even){
+    transform-origin: bottom;
+}
+
+.button-text{
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    text-align: center; /* ensure horizontal centering regardless of layout */
+    white-space: nowrap; /* keep text on single line */
+    overflow: visible; /* don't clip the text */
+}
